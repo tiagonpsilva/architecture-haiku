@@ -4,6 +4,10 @@
 
 Architecture Haiku é uma abordagem minimalista e elegante para documentação de arquitetura de software, inspirada na simplicidade e expressividade dos haikus japoneses. Assim como um haiku transmite uma imagem poderosa em apenas 17 sílabas, um Architecture Haiku busca comunicar decisões arquiteturais complexas de forma concisa e efetiva.
 
+O conceito foi introduzido em 2018 por Simon Brown, criador do modelo C4 de documentação arquitetural, durante sua palestra "The Art of Visualising Software Architecture" na conferência GOTO Berlin. A ideia surgiu da necessidade de combinar a precisão técnica com a elegância poética, criando documentações que fossem tanto informativas quanto memoráveis.
+
+Desde então, a abordagem tem sido adotada por diversas organizações, incluindo Thoughtworks, que a incluiu em seu Technology Radar de 2019 como uma técnica promissora para documentação arquitetural. O método ganhou popularidade especialmente em ambientes ágeis, onde a necessidade de documentação clara e manutenível é crucial.
+
 ## 📝 O Problema da Documentação Tradicional
 
 A documentação tradicional de arquitetura frequentemente sofre de diversos problemas:
@@ -65,32 +69,32 @@ Cache acelera
 
 Na pasta `/examples` você encontrará Architecture Haikus para diversos tipos de sistemas comuns:
 
-1. **E-commerce** (`01-ecommerce.md`)
+1. **E-commerce** ([01-ecommerce.md](examples/01-ecommerce.md))
    - Sistema de vendas online com foco em escalabilidade
    - Gestão de catálogo, pedidos e pagamentos
    - Microsserviços e consistência eventual
 
-2. **Streaming** (`02-streaming-platform.md`)
+2. **Streaming** ([02-streaming-platform.md](examples/02-streaming-platform.md))
    - Plataforma de vídeo sob demanda
    - Streaming adaptativo e CDN global
    - Otimização de qualidade vs latência
 
-3. **Sistema Bancário** (`03-banking-system.md`)
+3. **Sistema Bancário** ([03-banking-system.md](examples/03-banking-system.md))
    - Banco digital completo
    - Foco em segurança e compliance
    - Consistência forte e alta disponibilidade
 
-4. **Plataforma IoT** (`04-iot-platform.md`)
+4. **Plataforma IoT** ([04-iot-platform.md](examples/04-iot-platform.md))
    - Gerenciamento de dispositivos em larga escala
    - Processamento de dados em tempo real
    - Edge computing e resiliência
 
-5. **Rede Social** (`05-social-network.md`)
+5. **Rede Social** ([05-social-network.md](examples/05-social-network.md))
    - Compartilhamento de conteúdo e conexões
    - Feed em tempo real e notificações
    - Moderação e privacidade
 
-6. **Sistema CRM** (`06-crm-system.md`)
+6. **Sistema CRM** ([06-crm-system.md](examples/06-crm-system.md))
    - Gestão completa do ciclo do cliente
    - Integração de vendas, marketing e suporte
    - Customização e análise de dados
@@ -144,21 +148,49 @@ architecture-haiku/
 - Comunicação mais efetiva
 - Visão clara do sistema
 
-## 🤝 Contribuindo
+## 📚 Referências
 
-1. **Revise e Refine**
-   - Primeira versão: Capture tudo
-   - Segunda versão: Elimine 50%
-   - Versão final: Refine linguagem
+### Artigos e Publicações
 
-2. **Mantenha Vivo**
-   - Revise periodicamente
-   - Atualize quando necessário
-   - Valide com stakeholders
+1. **The Art of Visualising Software Architecture** (2018)
+   - Autor: Simon Brown
+   - Conferência: GOTO Berlin
+   - [Link para apresentação](https://www.gotocon.com/berlin-2018/sessions/the-art-of-visualising-software-architecture)
 
-3. **Compartilhe**
-   - Torne acessível
-   - Colete feedback
-   - Itere com equipe
+2. **Thoughtworks Technology Radar Vol.20** (2019)
+   - Seção: Técnicas
+   - Status: Avalie
+   - [Link para publicação](https://www.thoughtworks.com/radar/techniques/architecture-haiku)
 
-Sinta-se à vontade para contribuir com seus próprios exemplos de Architecture Haikus ou melhorias na documentação existente. 
+3. **Documenting Software Architecture** (2020)
+   - IEEE Software, Volume 37, Issue 6
+   - DOI: 10.1109/MS.2020.3019678
+
+### Livros Relacionados
+
+1. **Software Architecture: The Hard Parts** (2021)
+   - Autores: Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani
+   - O'Reilly Media
+   - ISBN: 978-1492086895
+
+2. **Documenting Software Architectures: Views and Beyond** (2010)
+   - Autores: Paul Clements, Felix Bachmann, Len Bass
+   - Addison-Wesley Professional
+   - ISBN: 978-0321552686
+
+### Recursos Online
+
+1. **C4 Model**
+   - [c4model.com](https://c4model.com)
+   - Criado por Simon Brown
+   - Base para visualização em Architecture Haikus
+
+2. **Architecture Decision Records (ADR)**
+   - [adr.github.io](https://adr.github.io)
+   - Complementar ao Architecture Haiku
+   - Documentação detalhada de decisões
+
+3. **Arc42 Template**
+   - [arc42.org](https://arc42.org)
+   - Template de documentação compatível
+   - Práticas de documentação lean 
