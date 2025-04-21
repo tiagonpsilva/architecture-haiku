@@ -61,51 +61,48 @@ Microserviços dançam
 Cache acelera
 ```
 
-## 🎯 Exemplo Prático: Sistema de Pagamentos
+## 📖 Exemplos Práticos
 
-### Contexto em Haiku
-```
-Dinheiro flui já
-Gateway guarda o caminho
-Kafka observa
-```
+Na pasta `/examples` você encontrará Architecture Haikus para diversos tipos de sistemas comuns:
 
-### Decisões Arquiteturais Essenciais
+1. **E-commerce** (`01-ecommerce.md`)
+   - Sistema de vendas online com foco em escalabilidade
+   - Gestão de catálogo, pedidos e pagamentos
+   - Microsserviços e consistência eventual
 
-#### Padrão de API
-- REST/HTTP para sincronismo
-- Kafka para eventos assíncronos
-- Circuit Breaker em integrações
+2. **Streaming** (`02-streaming-platform.md`)
+   - Plataforma de vídeo sob demanda
+   - Streaming adaptativo e CDN global
+   - Otimização de qualidade vs latência
 
-#### Persistência
-- PostgreSQL para ACID
-- Eventos para audit log
-- Cache distribuído (Redis)
+3. **Sistema Bancário** (`03-banking-system.md`)
+   - Banco digital completo
+   - Foco em segurança e compliance
+   - Consistência forte e alta disponibilidade
 
-#### Segurança
-- OAuth2 + JWT
-- TLS em todas conexões
-- Secrets em Vault
+4. **Plataforma IoT** (`04-iot-platform.md`)
+   - Gerenciamento de dispositivos em larga escala
+   - Processamento de dados em tempo real
+   - Edge computing e resiliência
 
-### Trade-offs Principais
+5. **Rede Social** (`05-social-network.md`)
+   - Compartilhamento de conteúdo e conexões
+   - Feed em tempo real e notificações
+   - Moderação e privacidade
 
-1. **Consistência vs Disponibilidade**
-   - Escolha: Consistência para saldos
-   - Motivo: Requisito regulatório
+6. **Sistema CRM** (`06-crm-system.md`)
+   - Gestão completa do ciclo do cliente
+   - Integração de vendas, marketing e suporte
+   - Customização e análise de dados
 
-2. **Acoplamento vs Autonomia**
-   - Escolha: Serviços autônomos
-   - Custo: Duplicação controlada
-
-3. **Performance vs Complexidade**
-   - Escolha: Cache distribuído
-   - Impacto: Mais infraestrutura
-
-### Métricas Chave
-- Latência < 500ms (P95)
-- Disponibilidade 99.95%
-- Recovery Point 0 (saldos)
-- Recovery Time < 5min
+Cada exemplo segue a estrutura padrão e inclui:
+- Haiku contextual
+- Visão geral do sistema
+- Stakeholders principais
+- Decisões arquiteturais
+- Trade-offs importantes
+- Métricas chave
+- Planos de evolução
 
 ## 🚫 Anti-Padrões
 
@@ -125,9 +122,9 @@ Kafka observa
 
 ```
 architecture-haiku/
-├── docs/           # Documentação detalhada e artigos
-├── samples/        # Exemplos práticos de Architecture Haikus
-└── diagrams/       # Diagramas C4 Model em PlantUML
+├── examples/        # Exemplos práticos de Architecture Haikus
+├── templates/       # Templates para novos haikus
+└── diagrams/        # Diagramas C4 Model em PlantUML
 ```
 
 ## ✨ Benefícios
