@@ -1,0 +1,50 @@
+@startuml Sistema de Pagamentos - Contexto
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Sistema de Pagamentos - Diagrama de Contexto
+
+Person(cliente, "Cliente", "Usuário que realiza pagamentos")
+Person(lojista, "Lojista", "Comerciante que recebe pagamentos")
+
+System(sistema_pagamentos, "Sistema de Pagamentos", "Processa transações financeiras de forma segura e eficiente")
+
+System_Ext(banco, "Sistema Bancário", "Processa transferências bancárias")
+System_Ext(anti_fraude, "Sistema Anti-Fraude", "Analisa transações suspeitas")
+
+Rel(cliente, sistema_pagamentos, "Realiza pagamentos")
+Rel(lojista, sistema_pagamentos, "Recebe pagamentos")
+Rel(sistema_pagamentos, banco, "Processa transferências")
+Rel(sistema_pagamentos, anti_fraude, "Verifica transações")
+
+@enduml
+
+@startuml Sistema de Pagamentos - Contêiner
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Sistema de Pagamentos - Diagrama de Contêiner
+
+Person(cliente, "Cliente", "Usuário que realiza pagamentos")
+Person(lojista, "Lojista", "Comerciante que recebe pagamentos")
+
+System_Boundary(sistema_pagamentos, "Sistema de Pagamentos") {
+    Container(api_gateway, "API Gateway", "Spring Cloud Gateway", "Roteamento e autenticação")
+    Container(servico_pagamentos, "Serviço de Pagamentos", "Spring Boot", "Processa transações")
+    Container(servico_contas, "Serviço de Contas", "Spring Boot", "Gerencia contas e saldos")
+    ContainerDb(banco_dados, "Banco de Dados", "PostgreSQL", "Armazena transações e contas")
+    Container(fila_eventos, "Fila de Eventos", "Apache Kafka", "Mensageria assíncrona")
+}
+
+System_Ext(banco, "Sistema Bancário", "Processa transferências bancárias")
+System_Ext(anti_fraude, "Sistema Anti-Fraude", "Analisa transações suspeitas")
+
+Rel(cliente, api_gateway, "Usa", "HTTPS/REST")
+Rel(lojista, api_gateway, "Usa", "HTTPS/REST")
+Rel(api_gateway, servico_pagamentos, "Roteia requisições", "HTTPS/REST")
+Rel(servico_pagamentos, servico_contas, "Consulta/Atualiza", "HTTPS/REST")
+Rel(servico_pagamentos, banco_dados, "Lê/Escreve")
+Rel(servico_contas, banco_dados, "Lê/Escreve")
+Rel(servico_pagamentos, fila_eventos, "Publica eventos")
+Rel(servico_pagamentos, banco, "Integra", "HTTPS/REST")
+Rel(servico_pagamentos, anti_fraude, "Verifica", "HTTPS/REST")
+
+@enduml 
